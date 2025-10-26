@@ -4,9 +4,14 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 3000,               // dev server port
-    open: true,               // opens browser automatically
-    historyApiFallback: true, // THIS ensures React Router works
+    port: 3000,
+    open: true,
   },
+  // Add this to fix React Router 404 on refresh
+  build: {
+    rollupOptions: {
+      input: 'index.html'
+    }
+  }
 });
 
