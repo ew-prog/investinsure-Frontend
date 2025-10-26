@@ -5,7 +5,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,               // dev server port
-    open: true,               // automatically opens browser
-    historyApiFallback: true, // fixes React Router 404 issue
+    open: true,               // opens browser automatically
+    historyApiFallback: true, // THIS ensures React Router works
   },
 });
+
