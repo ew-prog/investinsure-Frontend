@@ -7,11 +7,11 @@ export default defineConfig({
     port: 3000,
     open: true,
   },
-  // Add this to fix React Router 404 on refresh
+  // This ensures React Router routes work
+  resolve: {
+    alias: [{ find: '@', replacement: '/src' }],
+  },
   build: {
-    rollupOptions: {
-      input: 'index.html'
-    }
-  }
+    outDir: 'dist',
+  },
 });
-
