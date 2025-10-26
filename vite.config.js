@@ -5,13 +5,11 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
-    open: true,
-  },
-  // This ensures React Router routes work
-  resolve: {
-    alias: [{ find: '@', replacement: '/src' }],
+    open: true
   },
   build: {
-    outDir: 'dist',
-  },
+    rollupOptions: {
+      input: '/index.html'  // ensures React Router works
+    }
+  }
 });
